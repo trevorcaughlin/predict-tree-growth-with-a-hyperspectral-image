@@ -3,6 +3,7 @@ Code for a least squares algorithm to select narrowband indices to predict tree 
 This code is associated with the following paper in the journal Ecological Applications:
 
 Title: A hyperspectral image can predict tropical tree growth rates in single-species stands
+
 Authors: T. Trevor Caughlin, Sarah J. Graves, Gregory P. Asner, Michiel van Breugel, Jefferson S.
 Hall, Roberta E. Martin, Mark S. Ashton, Stephanie A. Bohlman
 
