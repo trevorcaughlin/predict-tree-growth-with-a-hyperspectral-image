@@ -7,6 +7,9 @@
 #gro=tree diameter growth data, aggregated to the level of single-species plots
 #wave=the wavelengths of the hyperspectral data, standardized by centering around mean and dividing by two sd
 
+#PRESS (predicted residual error sum of squares) statistic
+#represents leave-one-out cross-validation: analytical derivation for least squares regression
+PRESS<-function (x) {sum(resid(x)^2/(1 - lm.influence(x)$hat)^2)}
 
 sample_size=length(gro)
 
