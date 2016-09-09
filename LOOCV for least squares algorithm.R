@@ -33,10 +33,11 @@ for(i in 1:sample_size){
 
 #this function takes in the iteration of the LOOCV and then 
 #evaluates predictive power of all possible narrowband indices with R2 and PRESS statistic
-LOOyou<-function (itera,vars) {
+LOOyouCV<-function (itera,vars) {
 
   gmat<-ALLpredB[[itera]]
 
+#uses iteration number of training data as an input to function
   gro=ALLresp[[itera]]
 
   go<-matrix(NA,nrow=ncol(gmat),ncol=ncol(gmat))
@@ -82,7 +83,7 @@ for(j in 1:length(ALLresp)){
   nextoe[1]<-"elevation"
 
   for(i in 1:6) { #number of iterations determined by randomization test
-    MATfriends<-LOOyou(j,nextoe[i])
+    MATfriends<-LOOyouCV(j,nextoe[i])
     MATLe[[i]]<-MATfriends[[1]]
     MATLeR[[i]]<-MATfriends[[2]]
 
