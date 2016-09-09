@@ -33,10 +33,11 @@ for(i in 2:sample_size){ #randomly sampled growth data.
 
 
 #function to iterate over all possible narrowband indices and calculate R2 and PRESS statistic
-LOOyou<-function (itera,vars) {
+LOOyouRANDOM<-function (itera,vars) {
   
   gmat<-bandsAGG
   
+  #has iteration of sampled growth data as an input to function
   gro=ALLtest[[itera]]
   
   go<-matrix(NA,nrow=ncol(gmat),ncol=ncol(gmat))
@@ -79,7 +80,7 @@ for(j in 1:length(ALLtest)){
   nextoe[1]<-"elevation"
 
   for(i in 1:10) {
-    MATfriends<-LOOyou(j,nextoe[i])
+    MATfriends<-LOOyouRANDOM(j,nextoe[i])
     MATLe[[i]]<-MATfriends[[1]]
     MATLeR[[i]]<-MATfriends[[2]]
 
