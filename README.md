@@ -8,3 +8,8 @@ Authors: T. Trevor Caughlin, Sarah J. Graves, Gregory P. Asner, Michiel van Breu
 Hall, Roberta E. Martin, Mark S. Ashton, Stephanie A. Bohlman
 
 T. Trevor Caughlin is the author of the R code. This code uses the PRESS statistic to select narrowband indices, the normalized difference between two narrowbands from hyperspectral data, to predict tree growth rates. The concept is not limited to tree growth rates and could be used for any continuous metric that needs to be predicted from a hyperspectral image.
+ 
+We recommend using the R files in this order:
+1. Use "Least Squares Algorithm.R" to explore whether our approach is suitable for your dataset.
+2. If you plan to use the algorithm, you should run the Randomization test in "Randomization test for least squares algorithm.R" to determine how many narrowband indices should be added to your model
+3. Once you have determined an appropriate number of narrowband indices to add using the randomization test, you should run the R script "LOOCV for least squares algorithm.R" to calculate out-of-sample metrics of model fit from leave-one-out cross-validation
